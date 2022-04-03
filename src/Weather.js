@@ -13,7 +13,7 @@ function handleResponse(response) {
     ready: true,
     temperature: response.data.main.temp,
     description: response.data.weather[0].description,
-    iconUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
+    iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     humidity: response.data.main.humidity,
     wind: response.data.wind.speed,
     city: response.data.name,
@@ -49,7 +49,7 @@ return (
       placeholder="Enter a city..."
       className="form-control"
       autoFocus="on"
-      onchange={handleCityChange}
+      onChange={handleCityChange}
       />
     </div>
     <div className="col-3">
