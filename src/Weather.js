@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import WeatherInfo from "./WeatherInfo.js";
 import axios from "axios";
 import "./Weather.css";
@@ -13,7 +12,7 @@ function handleResponse(response) {
     ready: true,
     temperature: response.data.main.temp,
     description: response.data.weather[0].description,
-    iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+    icon: response.data.weather[0].icon,
     humidity: response.data.main.humidity,
     wind: response.data.wind.speed,
     city: response.data.name,
