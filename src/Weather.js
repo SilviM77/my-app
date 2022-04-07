@@ -32,7 +32,6 @@ search();
 
 function search() {
   const apiKey = `b3e1522d82584110f6073765cb9a8c79`;
-  let city = "New York";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(handleResponse);
 }
