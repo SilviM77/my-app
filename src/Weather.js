@@ -7,6 +7,7 @@ import "./Weather.css";
 export default function Weather(props) {
 const [weatherData, setWeatherData] = useState({ready: false});
 const [city, setCity] = useState(props.defaultCity);
+
 function handleResponse(response) {
   setWeatherData({
     ready: true,
@@ -23,11 +24,11 @@ function handleResponse(response) {
 }
 function handleSubmit(event) {
   event.preventDefault();
+  search();
 }
 
 function handleCityChange(event) {
 setCity(event.target.value);
-search();
 }
 
 function search() {
