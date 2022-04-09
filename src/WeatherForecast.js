@@ -16,15 +16,19 @@ export default function WeatherForecast(props) {
   if (loaded) {
     return (
       <div className="WeatherForecast">
-        <dv className="row">
-          <div className="col">
-            <WeatherForecastDay data={forecast[0]} />
+        <div className="row">
+          {forecast.map(function (dailyForecast, index) {
+            if (index < 5) {
+            return ( 
+              <div className="col" key={index}>
+            <WeatherForecastDay data={dailyForecast} />
           </div>
-        </dv>
+            );
+          }
+          })}
+      </div>
       </div>
     );
-  
-  
   } else { 
     let apiKey = "bd8267e0e5535d9938ff03155812f193";
     let longitude = props.coordinates.lon;
